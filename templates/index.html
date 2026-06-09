@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EarthMirror AI</title>
+
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo-section">
+            <img src="{{ url_for('static', filename='logo.jpg') }}" alt="EarthMirror Logo" class="logo">
+            <h2>EarthMirror AI</h2>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#calculator">Calculator</a></li>
+            <li><a href="#insights">AI Insights</a></li>
+            <li><a href="#future">Future Simulator</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Track, Understand & Reduce Your Carbon Footprint</h1>
+
+            <p>
+                EarthMirror AI helps individuals measure their environmental
+                impact, receive personalized sustainability advice,
+                and visualize a greener future.
+            </p>
+
+            <a href="#calculator" class="btn-primary">
+                Calculate My Footprint
+            </a>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section id="calculator" class="section">
+        <h2>Carbon Footprint Calculator</h2>
+
+        <div class="card">
+
+            <div class="form-group">
+                <label>Travel (km per week)</label>
+                <input type="number" id="travel" placeholder="Example: 50">
+            </div>
+
+            <div class="form-group">
+                <label>Electricity Usage (units/month)</label>
+                <input type="number" id="electricity" placeholder="Example: 120">
+            </div>
+
+            <div class="form-group">
+                <label>Food Consumption Score (1-100)</label>
+                <input type="number" id="food" placeholder="Example: 60">
+            </div>
+
+            <div class="form-group">
+                <label>Shopping Habits Score (1-100)</label>
+                <input type="number" id="shopping" placeholder="Example: 40">
+            </div>
+
+            <button class="btn-primary" onclick="calculateFootprint()">
+                Calculate Carbon Score
+            </button>
+
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section">
+        <div class="result-card">
+
+            <h2>Your Carbon Score</h2>
+
+            <h1 id="carbonScore">--</h1>
+
+            <p id="impactLevel">
+                Impact Level: --
+            </p>
+
+        </div>
+    </section>
+
+    <!-- AI Insights -->
+    <section id="insights" class="section">
+
+        <h2>AI Sustainability Coach</h2>
+
+        <button class="btn-secondary" onclick="getInsights()">
+            Generate AI Insights
+        </button>
+
+        <div class="card output-card">
+
+            <pre id="aiInsights">
+Your personalized recommendations will appear here.
+            </pre>
+
+        </div>
+
+    </section>
+
+    <!-- Future Simulator -->
+    <section id="future" class="section">
+
+        <h2>Future Earth Simulator</h2>
+
+        <button class="btn-secondary" onclick="simulateFuture()">
+            Predict Future Impact
+        </button>
+
+        <div class="card output-card">
+
+            <pre id="futureSimulation">
+Future sustainability projections will appear here.
+            </pre>
+
+        </div>
+
+    </section>
+
+    <!-- Features -->
+    <section class="section">
+
+        <h2>Why EarthMirror AI?</h2>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <h3>Carbon Tracking</h3>
+                <p>
+                    Measure your environmental footprint instantly.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>AI Climate Coach</h3>
+                <p>
+                    Personalized recommendations powered by Gemini AI.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Future Simulation</h3>
+                <p>
+                    Visualize long-term environmental impact.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <h3>Sustainability Goals</h3>
+                <p>
+                    Build eco-friendly habits through actionable challenges.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+        <h3>EarthMirror AI 🌍</h3>
+
+        <p>
+            Built to inspire sustainable living through AI-powered insights.
+        </p>
+
+        <p>
+            © 2026 EarthMirror AI
+        </p>
+
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
